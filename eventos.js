@@ -16,8 +16,6 @@ function escolherEstado(){
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/regioes/${regiao.value}/estados`)
     .then((resposta) => (resposta.json()))
     .then((estados) => {
-        
-        //document.getElementById('estado').innerHTML = '';
         estados.forEach((cadaEstado) => {
         document.getElementById('estado').innerHTML += `
         <option value="${cadaEstado.id}">${cadaEstado.nome}</option>`;
@@ -32,7 +30,6 @@ function escolherMunicipio(){
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado.value}/municipios`)
     .then((resposta) => (resposta.json()))
     .then((municipios) => {
-        //municipio.innerHTML = '';
         municipios.forEach((cadaMunicipio) => {
         document.getElementById('municipio').innerHTML += `
         <option >${cadaMunicipio.nome}</option>`;
